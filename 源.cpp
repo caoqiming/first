@@ -256,7 +256,6 @@ void grow_the_tree_once(mf_state* root)
 		root->children[i]->last_change = i + 1;
 	}
 	root->n_children = 4;
-	cout << root->depth << endl;
 }
 
 
@@ -348,8 +347,9 @@ int main()
 	}
 
 	mf_state* root = new mf_state(c1, c2, c3, c4);
-	mf_state* ans = build_the_tree(root);
 	cout << "四面体魔方开始求最优解：" << endl;
+	mf_state* ans = build_the_tree(root);
+
 	print_ans(ans);
 
 	release_the_tree(root);
